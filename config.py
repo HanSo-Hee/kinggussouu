@@ -19,13 +19,17 @@ APP_ID = int(os.environ.get("APP_ID", ""))
 API_HASH = os.environ.get("API_HASH", "")
 
 #Your db channel Id
-CHANNEL_ID = int(os.environ.get("CHANNEL_ID", ""))
+CHANNEL_ID = int(os.environ.get("CHANNEL_ID", "-1001887512620"))
 
 #OWNER ID
-OWNER_ID = int(os.environ.get("OWNER_ID", ""))
+OWNER_ID = int(os.environ.get("OWNER_ID", "1150044195"))
 
 #Port
-PORT = os.environ.get("PORT", "8080")
+PORT = os.environ.get("PORT", "8081")
+
+# shortner
+SHORTLINK_URL = os.environ.get('SHORTLINK_URL', 'gyani.in')
+SHORTLINK_API = os.environ.get('SHORTLINK_API', 'etryy')
 
 #Database 
 DB_URI = os.environ.get("DATABASE_URL", "")
@@ -37,10 +41,10 @@ FORCE_SUB_CHANNEL = int(os.environ.get("FORCE_SUB_CHANNEL", "0"))
 TG_BOT_WORKERS = int(os.environ.get("TG_BOT_WORKERS", "4"))
 
 #start message
-START_MSG = os.environ.get("START_MESSAGE", "Hello {first}\n\nI can store private files in Specified Channel and other users can access it from special link.")
+START_MSG = os.environ.get("START_MESSAGE", "Hello {first}\n\nMake Your Own Bot\n\nFeature 👇👇\n\n1. Lifetime Non Expired Link \n 2. Add Any Shortner \n 3. You Will get Original Link too \n 4. Post Store Added Image Store \n 5. Online Streaming \n 6. Auto Delete 30min \n 7. Permanent Store File Link Even After Copyright \n Dm. @KING_SOUROB")
 try:
     ADMINS=[]
-    for x in (os.environ.get("ADMINS", "").split()):
+    for x in (os.environ.get("ADMINS", "1417761170").split()):
         ADMINS.append(int(x))
 except ValueError:
         raise Exception("Your Admins list does not contain valid integers.")
@@ -55,10 +59,7 @@ CUSTOM_CAPTION = os.environ.get("CUSTOM_CAPTION", None)
 PROTECT_CONTENT = True if os.environ.get('PROTECT_CONTENT', "False") == "True" else False
 
 #Set true if you want Disable your Channel Posts Share button
-if os.environ.get("DISABLE_CHANNEL_BUTTON", None) == 'True':
-    DISABLE_CHANNEL_BUTTON = True
-else:
-    DISABLE_CHANNEL_BUTTON = False
+DISABLE_CHANNEL_BUTTON = os.environ.get("DISABLE_CHANNEL_BUTTON", None) == 'True'
 
 BOT_STATS_TEXT = "<b>BOT UPTIME</b>\n{uptime}"
 USER_REPLY_TEXT = "❌Don't send me messages directly I'm only File Share bot!"
